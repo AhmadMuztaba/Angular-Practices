@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="challange">
+    <h1>Typing Challange</h1>
+    <div>
+      <span [class]="check(letter,type[i])" *ngFor="let letter of generatedText.split('');let i=index;" style="letter-spacing: 3;"
+      >{{letter}}</span>
+  </div>
+  <div>{{time}}</div>
+    <input (input)="checkInput($event)" />
+    <!-- <div class="timer">{{timer}}</div> -->
+    <h2 *ngIf="!error&&show &&complete">success</h2>
+  </div>
+</div>
