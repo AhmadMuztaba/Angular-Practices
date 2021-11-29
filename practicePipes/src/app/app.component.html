@@ -1,0 +1,22 @@
+<div>
+  <label>Name</label>
+  <input (input)="onNameChange($event)"/>
+  <div>{{name|titlecase}}</div>
+  <label>Date</label>
+  <input type="date" (input)="onDateChange($event)"/>
+  <div>{{date|date:"MMMM d,y"}}</div>
+  <div>
+    <input type="number" (input)="onCurrency($event)"/>
+  </div>
+  <div>
+    {{currency|currency:'JPY'}}
+  </div>
+  <label>Height</label>
+  <input type="number" (input)="onHeight($event)"/>
+  {{height|number:'1.0-3'}}
+  <label>
+    Miles
+  </label>
+  <input (input)="onMilesChange($event)"/>
+  {{miles|convert:'m'}}
+</div>
