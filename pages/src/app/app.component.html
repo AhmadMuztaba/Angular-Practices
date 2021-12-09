@@ -1,13 +1,13 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination">
-    <li class="page-item" [ngClass]="{disabled:currentPage==0}">
+    <li class="page-item" [classList]="{disabled:currentPage==0}">
       <a class="page-link" href="#" (click)="pageDecrement()">Previous</a></li>
       <ng-container *ngFor="let image of images;let i=index">
-        <li class="page-item" *ngIf="checkWindowIndex(i)" [ngClass]="{active:currentPage==i}" >
+        <li class="page-item" *ngIf="checkWindowIndex(i)" [classList]="{active:currentPage==i}" >
           <a class="page-link" (click)="pageChange(i)" href="#">{{i+1}}</a></li>
        
       </ng-container>
-      <li class="page-item" (click)="pageIncrement()" [ngClass]="{disabled:currentPage==(images.length-1)}">
+      <li class="page-item" (click)="pageIncrement()" [classList]="{disabled:currentPage==(images.length-1)}">
         <a class="page-link" href="#">Next</a></li>
   </ul>
 </nav>
@@ -15,7 +15,7 @@
   {{images[currentPage].title}}
 </h1>
 <img [src]="images[currentPage].url" />
-<ng-container [ngSwitch]="currentPage">
+<ng-container  [ngSwitch]="currentPage">
   <div *ngSwitchCase="1">One</div>
   <div *ngSwitchCase="2">Two</div>
 </ng-container>
