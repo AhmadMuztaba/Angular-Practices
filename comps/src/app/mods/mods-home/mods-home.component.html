@@ -1,0 +1,18 @@
+<app-devider>Modal</app-devider>
+<button (click)="showMods()">Show Modal</button>
+<app-modal (close)="showMods()" *ngIf="mods">
+    <div class="header">
+        Modal
+    </div>
+    <div class="content">
+        <p>
+            This is the modal component .
+        </p>
+    </div>
+    <ng-container content>
+    <!-- <button (click)="showMods()" class="ui button">Ok</button> -->
+    </ng-container>
+</app-modal>
+<app-devider>Accordion</app-devider>
+<app-accordion></app-accordion>
+<app-accordion [items]="items"></app-accordion>
