@@ -1,0 +1,17 @@
+<div class="field">
+    <label>{{label}}</label>
+    <input [formControl]="controls"/>
+    <!-- {{controls.errors|json}} -->
+    <div *ngIf="controls.touched&&controls.errors" class="ui red pointing red basic label">
+        <p *ngIf="controls.errors['required']">
+            Value is Required
+        </p>
+        <p *ngIf="controls.errors['min']">
+           min length is 6
+        </p>
+        <p *ngIf="controls.errors['usernameExist']">
+            username Taken
+        </p>
+    </div>
+</div>
+

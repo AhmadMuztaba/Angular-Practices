@@ -1,0 +1,19 @@
+<h3>Signup</h3>
+<form class="ui form"  [formGroup]="form" (ngSubmit)="submit()">
+        <app-input label="username" [controls]="form.controls['username']"></app-input>
+        <app-input label="password" [controls]="form.controls['password']"></app-input>
+        <app-input label="confirmPassword" [controls]="form.controls['confirmPassword']"></app-input>
+        <button>Submit</button>
+</form>
+<div *ngIf="form.controls['password'].touched && form.controls['confirmPassword'].touched &&form.errors" class="ui red pointing red basic label">
+    <p *ngIf="form.errors['passwordDontMatch']">
+        password and confirm password don't match
+    </p>
+</div>
+<ng-container *ngIf="signedIn$|async">
+    Signed In
+</ng-container>
+<ng-container *ngIf="!(signedIn$|async)">
+    Not Signed In
+</ng-container>
+<!-- {{form.errors|json}} -->

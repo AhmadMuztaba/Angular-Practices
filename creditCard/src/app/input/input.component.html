@@ -1,0 +1,11 @@
+<div class="field">
+    <label>{{label}}</label>
+    <div class="control">
+        <input  
+        [formControl]="control"/>
+    </div>
+
+<div *ngIf="control.dirty && control.errors">
+    {{control.errors|json}}
+</div>
+</div>

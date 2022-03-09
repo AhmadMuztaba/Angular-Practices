@@ -1,0 +1,6 @@
+<form [formGroup]="cardForm">
+    <app-input [label]="'Name'" [control]="cardForm.controls['name']"></app-input>
+    <app-input [label]="'cardNumber'" [control]="cardForm.controls['cardNumber']"></app-input>
+    <app-input [label]="'expiration'" [control]="cardForm.controls['expiration']"></app-input>
+    <app-input [label]="'secuitityCode'" [control]="cardForm.controls['secuirityCode']"></app-input>
+</form>
